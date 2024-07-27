@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Grupo</title>
+</head>
+<body>
+    <h2>Formulário Grupo</h2>
+    <div class="container">
+        <form method="post", class="formentry">
+            <div class="linha">
+                <label for="nome">
+                    Nome:
+                    <input type="text" name="nome" value="{{grup['nome_grup']}}" maxlength="30" required>
+                </label>
+                <label for="quant_membros">
+                    Quantidade de membros:
+                    <input type="text" name="quant_membros" value="{{grup['quant_membros}}" maxlength="30" required>
+                </label>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
