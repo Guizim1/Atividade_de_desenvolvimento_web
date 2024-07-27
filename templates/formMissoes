@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Missoes</title>
+</head>
+<body>
+    <h2>Formulário Missoes</h2>
+    <div class="container">
+        <form method="post", class="formentry">
+            <div class="linha">
+                <label for="objetivo">
+                    Objetivo:
+                    <input type="text" name="objetivo"  maxlength="30" required>
+                </label>
+            </div>
+            <div class="linha">
+                <label for="descricao">
+                    Descrição:
+                    <input type="text" name="descricao" maxlength="80" required>
+                </label>
+            <div class="linha">
+                <label for="recompensa">
+                    Recompensa:
+                    <input type="numer" name="recompensa" max="1000000" min="100" required>
+                </label>    
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
