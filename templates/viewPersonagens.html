@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens</title>
+</head>
+<body>
+    <div>
+        <a href="/">Retornar ao Índice</a>
+        {% if Personagens.__len__() == 0 %}
+        <h2>Não há Personagens Registrados!</h2>
+        {% endif %}
+        <div>
+            <table border='1'>
+                <h2>Tabela Personagens</h2>
+                <thead>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Poder</th>
+                    <th>Arma</th>
+                    <th>Força</th>
+                    <th>Agilidade</th>
+                    <th>Nivel</th>
+                </thead>
+                <tbody>
+                    {% for Personagem in Personagens %}
+                    <tr>
+                        <td>{{Personagem['id']}}</td>
+                        <td>{{Personagem['nome_person']}}</td>
+                        <td>{{Personagem['poder_person']}}</td>
+                        <td>{{Personagem['arma_person']}}</td>
+                        <td>{{Personagem['forca_person']}}</td>
+                        <td>R${{Personagem['agilidade_person']}}</td>
+                        <td>{{Personagem['nivel_person']}}</td>
+                        <td><a href="Personagens/editar/{{Personagem['id']}}">Editar</a></td>
+                        <td><a href="Personagens/remover/{{Personagem['id']}}">Apagar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="Personagens/novo">Adicionar novo Registro</a>
+        </div>
+        <h2>Tabelas de Relação:</h2>
+        <div>
+            <table border="1">
+                <h3>Personagem - Grupo</h3>
+                <thead>
+                    <th>Nome</th>
+                    <th>Poder</th>
+                    <th>Arma</th>
+                    <th>Forca</th>
+                    <th>Agilidade</th>
+                    <th>Nivel</th>
+                    <th>Personagem_Grupo</th>
+                </thead>
+                <tbody>
+                    {% for rel in PGrupos %}
+                    <tr>
+                        <td>{{Personagem['id']}}</td>
+                        <td>{{Personagem['nome_person']}}</td>
+                        <td>{{Personagem['poder_person']}}</td>
+                        <td>{{Personagem['arma_person']}}</td>
+                        <td>{{Personagem['forca_person']}}</td>
+                        <td>R${{Personagem['agilidade_person']}}</td>
+                        <td>{{Personagem['nivel_person']}}</td>
+                        <td>{{rel['nome_grup']}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <table border="1">
+                <h3>Personagem - Missoes</h3>
+                <thead>
+                    <th>Nome</th>
+                    <th>Poder</th>
+                    <th>Arma</th>
+                    <th>Forca</th>
+                    <th>Agilidade</th>
+                    <th>Nivel</th>
+                    <th>Personagem_Missoes</th>
+                </thead>
+                <tbody>
+                    {% for rel in PMiss %}
+                    <tr>
+                        <td>{{Personagem['id']}}</td>
+                        <td>{{Personagem['nome_person']}}</td>
+                        <td>{{Personagem['poder_person']}}</td>
+                        <td>{{Personagem['arma_person']}}</td>
+                        <td>{{Personagem['forca_person']}}</td>
+                        <td>R${{Personagem['agilidade_person']}}</td>
+                        <td>{{Personagem['nivel_person']}}</td>
+                        <td>{{rel['nome_mis']}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <table border="1">
+                <h3>Personagem - Gênero</h3>
+                <thead>
+                    <th>Nome</th>
+                    <th>Poder</th>
+                    <th>Arma</th>
+                    <th>Forca</th>
+                    <th>Agilidade</th>
+                    <th>Nivel</th>
+                    <th>Personagem_Genero</th>
+                </thead>
+                <tbody>
+                    {% for rel in Jgens %}
+                    <tr>
+                        <td>{{Personagem['id']}}</td>
+                        <td>{{Personagem['nome_person']}}</td>
+                        <td>{{Personagem['poder_person']}}</td>
+                        <td>{{Personagem['arma_person']}}</td>
+                        <td>{{Personagem['forca_person']}}</td>
+                        <td>R${{Personagem['agilidade_person']}}</td>
+                        <td>{{Personagem['nivel_person']}}</td>
+                        <td>{{rel['nome_gene']}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
